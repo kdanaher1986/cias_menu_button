@@ -1,0 +1,140 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dedede;
+  font-family: 'Roboto';
+}
+
+h1 {
+  color: #929292;
+  font-weight: 400;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 100px;
+}
+
+textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 60%;
+  height: 20%;
+}
+
+a {
+  font-size: 50px;
+  font-family: arial;
+  color: beige;
+  font-style: bold;
+}
+
+.card {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.card .main {
+  width: 100%;
+  height: 70%;
+  background-color: #97f4ff;
+  z-index: 1;
+}
+.card .fab {
+  width: 50px;
+  height: 50px;
+  background-color: darkred;
+  position: absolute;
+  z-index: 99;
+  left: 20px;
+  top: calc(70% - 25px);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transform: scale3d(1, 1, 1);
+  transition: 0.6s cubic-bezier(0.65, -0.4, 0.49, 1.4);
+  transition-delay: .2s;
+}
+.card .fab.expand {
+  cursor: default;
+  transform: scale3d(25, 25, 1);
+  transition: 0.6s cubic-bezier(0.65, -0.68, 0.49, 1.94);
+  transition-delay: .1s;
+}
+.card .fab-sha {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 20px;
+  top: calc(70% - 25px);
+  border: 1px solid #ffe375;
+  border-radius: 50%;
+  transform: scale3d(0.9, 0.9, 1);
+  transition: .4s ease-in-out;
+  transition-delay: .5s;
+}
+.card .fab-sha.active {
+  transform: scale3d(4, 4, 1);
+  border: 3px solid #ffe375;
+  transition: .4s ease-in-out;
+}
+
+.card .field {
+    height: auto;
+    width: 30%;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    z-index: 201;
+    /*display: inline-flex;*/
+}
+
+.card .links {
+    height: auto;
+    width: 10%;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    z-index: 201;
+    /*display: inline-flex;*/
+}
+
+.close {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  transform: rotateZ(0deg) scale3d(0, 0, 0);
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0.65, -0.68, 0.49, 1.94);
+}
+.close:before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin-left: calc(50% - 12px);
+  margin-top: calc(50% - 1.5px);
+}
+.close:after {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 3px;
+  background-color: white;
+  margin-top: calc(50% - 12px);
+  margin-left: calc(50% - 1.5px);
+}
+.close.active {
+  transform: rotateZ(135deg) scale3d(1, 1, 1);
+  transition: 0.4s cubic-bezier(0.65, -0.68, 0.49, 1.94);
+  transition-delay: .4s;
+}
+
